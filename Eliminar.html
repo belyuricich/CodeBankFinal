@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listadoEliminar</title>
+    <link rel="shortcut icon" href="Imagenes/Code Digital Bank.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9da9f1f7b0.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilomenu.css">
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+    
+    <header>
+        
+		<div class="encabezado">
+			<a href="#" class="bt-menu"><span class="icon-list2"></span>Menú</a>
+		</div>
+		<nav>
+            <h1>Code Digital Bank</h1>
+			<ul>
+				<li  class="boton"><a href="Index.html"><span ></span>Inicio</a></li>
+				<li  class="boton" ><a href="Quienessomos.html"><span></span>¿Quienes somos?</a></li>
+				<li  class="boton" ><a href="Nuestrosproductos.html"><span></span>Nuestros Productos</a></li>
+				<li  class="boton" ><a href="Hacetecliente.html"><span ></span>Hacete Cliente</a></li>
+                <li  class="boton" ><a href="Sucursales.html"><span ></span>Sucursales</a></li>
+                <li  class="boton" ><a href="IndexCrud.html"><span ></span>Tienda</a></li>
+			</ul>
+            </div>
+		</nav>
+	</header>
+
+    <H1>ELIMINAR PRODUCTO DEL CATALOGO</H1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th align="right">Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="producto in productos">
+                    <td>{{ producto.codigo }}</td>
+                    <td>{{ producto.descripcion }}</td>
+                    <td align="right">{{ producto.cantidad }}</td>
+                    <td align="right">{{ producto.precio }}</td>
+                    <td><button @click="eliminarProducto(producto.codigo)">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div class="contenedor-centrado">
+            <a href="Administrador.html">ADMINISTRADOR</a>
+        </div>
+       
+        <script src="https://unpkg.com/vue@next"></script>
+       
+       <script>
+            const app = Vue.createApp({
+                data() {
+                    return {
+                        productos: []
+                    }
+                },
+                methods: {
+                    obtenerProductos() {
+                        const URL = "https://hernan4545.pythonanywhere.com/"
+                        fetch(URL + 'productos')
+                            .then(response => {
+                                if (response.ok) {
+                                    return response.json()
+                                } else {
+                                    throw new Error('Error al obtener losproductos.')
+                                }
+                            })
+                            .then(data => {
+                                this.productos = data
+                            })
+                            .catch(error => {
+                                console.log('Error:', error)
+                                alert('Error al obtener los productos.')
+                            })
+                    },
+                    eliminarProducto(codigo) {
+                        const URL = "https://hernan4545.pythonanywhere.com/"
+                        fetch(URL + `productos/${codigo}`, { method: 'DELETE' })
+                            .then(response => {
+                                if (response.ok) {
+                                    // Eliminar el producto de la lista después de eliminarlo en el servidor
+                                    this.productos =
+                                        this.productos.filter(producto => producto.codigo !== codigo)
+                                    console.log('Producto eliminado correctamente.')
+                                }
+                            })
+                            .catch(error => {
+                                console.log('Error:', error)
+                                alert('Error al eliminar el producto.')
+                            })
+                    }
+                },
+                mounted() {
+                    this.obtenerProductos()
+                }
+            })
+            app.mount('body')
+        </script>
+</body>
+
+</html>

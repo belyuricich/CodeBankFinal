@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Hacete cliente!</title>
+    <link rel="shortcut icon" href="Imagenes/Code Digital Bank.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9da9f1f7b0.js" crossorigin="anonymous"></script>
+    <script src="httpS://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilomenu.css">
+</head>
+
+<body>
+    <header>
+        
+		<div class="encabezado">
+			<a href="#" class="bt-menu"><span class="icon-list2"></span>Menú</a>
+		</div>
+		<nav>
+            <h1>Code Digital Bank</h1>
+			<ul>
+				<li  class="boton"><a href="Index.html"><span ></span>Inicio</a></li>
+				<li  class="boton" ><a href="Quienessomos.html"><span></span>¿Quienes somos?</a></li>
+				<li  class="boton" ><a href="Nuestrosproductos.html"><span></span>Nuestros Productos</a></li>
+				<li  class="boton" ><a href="Hacetecliente.html"><span ></span>Hacete Cliente</a></li>
+                <li  class="boton" ><a href="Sucursales.html"><span ></span>Sucursales</a></li>
+                <li  class="boton" ><a href="IndexCrud.html"><span ></span>Tienda</a></li>
+                <li  class="boton2" ><a href="Administrador.html"><span ></span>  Administrador</a></li>
+			</ul>
+            </div>
+		</nav>
+	</header>
+
+    <div class="contenedorCliente">
+        <div class="Item1">
+           <div ><h3 style="color: #2e518b;">Descubrí la tarjeta CDB ideal para vos
+                ¡Te damos un año de bonifiación!</h3> </div>
+            <div ><p><i>Completa el formulario con tus datos de contacto y te enviaremos a la brevedad todas las opciones para vos</i></p></div>
+        </div>
+
+        <div class="body_formulario">
+        <form action="" class="formulario_validacion" id="formulario">
+			<!-- Grupo: Usuario -->
+			<div class="formulario__grupo" id="grupo__usuario">
+				<label for="usuario" class="formulario__label">Usuario</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Ada123">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+			</div>
+
+			<!-- Grupo: Nombre -->
+			<div class="formulario__grupo" id="grupo__nombre">
+				<label for="nombre" class="formulario__label">Nombre</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Ada Lovelace">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+			</div>
+
+			<!-- Grupo: Contraseña -->
+			<div class="formulario__grupo" id="grupo__password">
+				<label for="password" class="formulario__label">Contraseña</label>
+				<div class="formulario__grupo-input">
+					<input type="password" class="formulario__input" name="password" id="password">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+			</div>
+
+			<!-- Grupo: Contraseña 2 -->
+			<div class="formulario__grupo" id="grupo__password2">
+				<label for="password2" class="formulario__label">Repetir Contraseña</label>
+				<div class="formulario__grupo-input">
+					<input type="password" class="formulario__input" name="password2" id="password2">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+			</div>
+
+			<!-- Grupo: Correo Electronico -->
+			<div class="formulario__grupo" id="grupo__correo">
+				<label for="correo" class="formulario__label">Correo Electrónico</label>
+				<div class="formulario__grupo-input">
+					<input type="email" class="formulario__input" name="correo" id="correo" placeholder="adalovelace@correo.com">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+			</div>
+
+			<!-- Grupo: Teléfono -->
+			<div class="formulario__grupo" id="grupo__telefono">
+				<label for="telefono" class="formulario__label">Teléfono</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="1191234567">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+			</div>
+
+			<!-- Grupo: Terminos y Condiciones -->
+			<div class="formulario__grupo" id="grupo__terminos">
+				<label style="color: grey">
+					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+					Al continuar acepto <a href="#terminos">Términos y condiciones</a>
+                    sobre el tratamiento de datos.
+				</label>
+			</div>
+
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+			</div>
+
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
+				<button type="submit" class="boton_enviar">Enviar</button>
+				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+			</div>
+		</form>
+        </div>
+
+        <script src="js/formulario.js"></script>
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+        <div class="item3">
+            <img src="Imagenes/cliente.jpg" alt="code bank photo " width=400px>
+
+        </div>
+
+    </div>
+
+    <footer class="pie">
+        <a class="iconos" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a class="iconos" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a class="iconos" href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a class="iconos" href="https://ar.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a class="iconos" href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <p style="text-align: center; "><a class="enlace"  href="https://www.bcra.gob.ar/BCRAyVos/Usuarios_Financieros.asp" target="_blank"rel="noreferrer noopener"> <img src="Imagenes/Usuarios_financieros.jpg" alt="Usuarios_Financieros" width=300> </a>
+            <p style="text-align: center; ">© 2023 Code Digital Bank S.A. Todos los derechos reservados. <strong><i>Code Digital Bank</i></strong> es una marca registrada</p>
+    
+        <p style="font-size: x-small;"> <a name="terminos"></a>Términos y condiciones de tratamiento de datos
+            Los datos personales aquí incluidos tienen el carácter de declaración jurada y son recogidos para ser
+            incorporados y tratados en una base de datos, la cual se encuentra registrada en la Agencia de Acceso a la Información
+            Pública, cuyo destinatario y titular es el CDB Argentina S.A Cualquier falseamiento, error y/o inexactitud
+            respecto a la información implicará la supresión de estos datos de la base de referencia y no podrán ser utilizados a
+            futuro.<p>
+        <p style="font-size: x-small;">El usuario presta su consentimiento expreso al CDB, para que toda la información referente a su persona,
+            sus actividades económicas o las operaciones que haya concertado o que concierte en el futuro (en adelante y en
+            su conjunto "la información") pueda ser transferida y cedida, aun en forma gratuita, dentro de estrictas
+            políticas de confidencialidad y seguridad de los datos, a sus afiliadas, subsidiarias, controlantes, controladas y/o
+            cualquier tercero. <p>
+        <p style="font-size: x-small;"> La información podrá ser utilizada para: a) La realización de segmentaciones o perfiles del
+            Cliente, con fines comerciales a efectos de adaptar los productos o servicios a necesidades o características
+            específicas, así como con fines de análisis de riesgos para evaluar nuevas operaciones, en ambos supuestos conservando dichas
+            segmentaciones o perfiles en tanto y en cuanto el interviniente mantenga relación contractual con el CDB,
+            pudiendo oponerse en cualquier momento a dicho tratamiento; b) El envío a través de cualquier medio, por parte del
+            CDB de otros terceros, de ofertas comerciales, distintos tipos de informaciones o publicidades, personalizadas o
+            no, sobre productos o servicios propios o de terceros; c) Para cualquier otra finalidad no incompatible con las
+            especificadas anteriormente. Cuando así lo disponga, el usuario tendrá el derecho de acceder a la información y solicitar
+            su rectificación o supresión de la base de archivo.<P>
+
+        <p style="font-size: x-small;"> El CDB informa al usuario que sus datos personales podrán ser cedidos a las autoridades competentes cuando
+            las leyes o regulaciones de aplicación así lo establezcan. En función del Estándar de la Organización para la Cooperación y Desarrollo Económicos (OCDE) para el
+            Intercambio Automático de Información en Asuntos Fiscales y de las disposiciones de la Ley de cumplimiento fiscal de cuentas extranjeras (“Foreign Account Tax Compliance Act” - FATCA) de los Estados Unidos de América, el cliente autoriza al
+            Banco a ceder información a autoridades de terceros países por operatorias desarrolladas en los mercados
+            internacionales tales como Estados Unidos. Lo expuesto, ya sea de forma agregada o individual, según el
+            caso. <P>
+        <p style="font-size: x-small;"> El titular de los datos personales tiene el derecho de acceso a los mismos en forma gratuita en intervalos no
+            inferiores a seis meses, salvo que se acredite un interés legítimo al efecto conforme lo establecido en el
+            artículo 14, inciso 3 de la Ley 25.326.</p>
+
+        <p style="font-size: x-small;"> La AGENCIA DE ACCESO A LA INFORMACIÓN PUBLICA, Órgano de Control de la Ley Nº 25.326, tiene la atribución de
+            atender las denuncias y reclamos que se interpongan con relación al incumplimiento de las normas sobre protección de
+            datos personales.</p>
+        <p style="font-size: x-small;">  Sistemas de Biometría:
+            En caso de que el CDB defina el uso de dispositivos para la captura, lectura y/o procesamiento de datos
+            –inclusive
+            aquellos de carácter biométricos– en alguno de sus procesos operativos y/o de seguridad aplicables, el
+            usuario autoriza al CDB a compartir estos datos con terceros exclusivamente para el resguardo de la información
+            capturada, la verificación de la identidad del titular de los datos y/o con los fines que el CDB determine.
+
+            Sistemas de información crediticia:
+            Ante la solicitud de cualquier producto, el CDB puede solicitar información a las agencias de informes
+            comerciales
+            a fin de evaluar la situación crediticia del usuario.</p>
+
+            <p style="font-size: x-small;"> El usuario acepta que estará sujeto a la clasificación e inclusión en la "Central de deudores del sistema
+            financiero", de conformidad a la normativa vigente del B.C.R.A., dado que es obligación del BBVA informar,
+            solamente, al Banco Central de la República Argentina todos los datos que éste le requiera o que pudiera
+            requerirle
+            en el futuro, relacionados con sus Clientes. No será responsabilidad del CDB la utilización de la
+            información del
+            usuario por parte de terceros distintos al B.C.R.A., dado que la misma no es proporcionada por el Banco.</p>
+
+
+    </footer>
+
+</body>
+
+</html>

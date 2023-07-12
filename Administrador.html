@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="shortcut icon" href="Imagenes/Code Digital Bank.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9da9f1f7b0.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilomenu.css">
+</head>
+
+
+<body>
+    <header>
+        
+		<div class="encabezado">
+			<a href="#" class="bt-menu"><span class="icon-list2"></span>Menú</a>
+		</div>
+		<nav>
+            <h1>Code Digital Bank</h1>
+			<ul>
+				<li  class="boton"><a href="Index.html"><span ></span>Inicio</a></li>
+				<li  class="boton" ><a href="Quienessomos.html"><span></span>¿Quienes somos?</a></li>
+				<li  class="boton" ><a href="Nuestrosproductos.html"><span></span>Nuestros Productos</a></li>
+				<li  class="boton" ><a href="Hacetecliente.html"><span ></span>Hacete Cliente</a></li>
+                <li  class="boton" ><a href="Sucursales.html"><span ></span>Sucursales</a></li>
+                <li  class="boton" ><a href="IndexCrud.html"><span ></span>Tienda</a></li>
+                <li  class="boton2" ><a href="Administrador.html"><span ></span>  Administrador</a></li>
+			</ul>
+            </div>
+		</nav>
+	</header>
+
+    <div class="ContenedorAdministrador">
+
+   <div class="AdmWid1">
+    <img src="Imagenes/logoBank.jpg" alt="code bank photo " width=400px>
+   </div>
+
+    <div class="lista">
+        
+        <a class="botonMenu" href="Catalogo.html"><span></span>CATALOGO</a>
+        <br> <br>
+        <a class="botonMenu" href="Altas.html"><span></span>ALTA DE PRODUCTOS</a>
+        <br> <br>
+        <a class="botonMenu" href="modificaciones.html"><span></span>MODIFICAR PRODUCTO</a>
+        <br> <br>
+        <a class="botonMenu" href="Eliminar.html"><span></span>BAJA DE PRODUCTO</a>
+        <br> <br>
+  
+
+
+        <script>
+            // Capturamos el evento de envío del formulario
+            document.getElementById('formulario').addEventListener('submit', function (event) {
+                event.preventDefault() // Evitamos que se recargue la página
+
+                // Obtenemos los valores del formulario
+                var codigo = document.getElementById('codigo').value
+                var descripcion = document.getElementById('descripcion').value
+                var cantidad = document.getElementById('cantidad').value
+                var precio = document.getElementById('precio').value
+
+                // Creamos un objeto con los datos del producto
+                var producto = {
+                    codigo: codigo,
+                    descripcion: descripcion,
+                    cantidad: cantidad,
+                    precio: precio
+                }
+                console.log(producto)
+                // Realizamos la solicitud POST al servidor
+                url = 'https://hernan4545.pythonanywhere.com/productos'
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(producto)
+                })
+                    .then(function (response) {
+                        if (response.ok) {
+                            return response.json() // Parseamos la respuesta JSON
+                        } else {
+                            throw new Error('Error al agregar el producto.')
+                        }
+                    })
+                    .then(function (data) {
+                        alert('Producto agregado correctamente.')
+                    })
+                    .catch(function (error) {
+                        console.log('Error:', error)
+                        alert('Error al agregar el producto.')
+                    })
+            })
+        </script>
+
+
+    </div>
+
+    <div class="AdmWid2">
+        <br><br>
+        <img src="Imagenes/adm.jpg" alt="code bank photo " width=200px>
+    </div>
+
+</div>
+
+
+    <footer class="pie">
+        <a class="iconos" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a class="iconos" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a class="iconos" href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a class="iconos" href="https://ar.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a class="iconos" href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <p style="text-align: center; "><a href="https://www.bcra.gob.ar/BCRAyVos/Usuarios_Financieros.asp"
+                target="_blank" rel="noreferrer noopener"> <img src="Imagenes/Usuarios_financieros.jpg"
+                    alt="Usuarios_Financieros" width=300> </a>
+        <p style="text-align: center; ">© 2023 Code Digital Bank S.A. Todos los derechos reservados. <strong><i>Code
+                    Digital Bank</i></strong> es una marca registrada</p>
+    </footer>
+
+</body>
+
+</html>

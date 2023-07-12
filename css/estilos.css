@@ -1,0 +1,644 @@
+.encabezado {
+    background-color: #2e518b;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+  
+}
+
+.boton2 {
+    border: 1px solid #a9aea8;
+    padding: 5px;
+    justify-content: center;
+    background-color: #2da495;
+    color: #dce1e0;
+    text-decoration: none;
+    font-family: 'Helvetica', sans-serif;
+    border-radius: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #007bff;
+}
+
+body {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+}
+
+.portada {
+    text-align: center;
+    background-color: #becfe9;
+    animation-name: cambiarcolor;
+    animation-duration: 3.5s;
+}
+
+.lista {
+
+    display: flex;
+    flex-direction: column;
+	text-decoration: none;
+	padding: 15px;
+    margin: 10px;
+    width: 50%;
+    text-align: center;
+
+}
+
+table {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid lightslategray;
+    border-radius: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+@keyframes cambiarcolor {
+    0% {background-color: #2e518b;}
+    50% {background-color: #2d71ad;}
+    75% {background-color: #2acaf2;}
+    100% {background-color: #2e518b; }
+}
+
+
+.Tgold,
+.Tblack,
+.Tplatenium {
+    border-style: double;
+    padding: 5px;
+    text-align: center;
+    overflow:scroll;
+}
+
+.iconos {
+    color: white;
+    font-size: 1.5vw;
+    text-align: center;
+    padding: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+.boton {
+    border: 1px solid #2e518b;
+    padding: 5px;
+    justify-content: center;
+    background-color: #becfe9;
+    color: #2e518b;
+    text-decoration: none;
+    font-family: 'Helvetica', sans-serif;
+    border-radius: 20px;
+}
+
+
+.botonMenu {
+    border: 3px solid #2e518b;
+    padding:20px;
+    justify-content: center;
+    background-color: #becfe9;
+    color: #2e518b;
+    text-decoration: none;
+    font-family: 'Helvetica', sans-serif;
+    font-size: larger;
+    border-radius: 15px;
+}
+
+.boton1 {
+    text-align: center;
+    border: 1px solid #2e518b;
+    padding: 5px;
+    justify-content: center;
+    background-color: #becfe9;
+    color: #2e518b;
+    text-decoration: none;
+    font-family: 'Helvetica', sans-serif;
+    border-radius: 20px;
+    width: 30%;
+    align-items: center;
+}
+
+.pie {
+    background-color: #2e518b;
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin-top: 10 px;
+    padding: 5px;
+}
+
+.formulario {
+    border-radius: 15px;
+    background-color: rgb(215, 206, 206);
+    padding: 15px;
+}
+
+.Item1QuinesSomos {
+    margin-top: 10px;
+    color: white;
+    background-image: url(background.jpg);
+    padding-left: 20px;
+    font-family: 'Mulish', sans-serif;
+    animation: animacionQuienesSomos 2s linear 0s;
+   /* overflow:scroll;*/
+}
+
+
+@keyframes animacionQuienesSomos {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(0);}
+}
+
+.Item2QuinesSomos {
+    padding-bottom: 10%;
+    margin-top: 10px;
+    padding: 20px;
+    color: grey;
+    padding-left: 20px;
+
+}
+
+.SeparadorQuienesSomos {
+    background-color:rgb(215, 206, 206) ;
+}
+
+
+.widget-1 {
+    background: rgb(137, 175, 245);
+    color: #133870;
+    font-family: 'Space Grotesk', sans-serif;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+   
+}
+
+.widget-2 {
+    background: rgb(137, 175, 245);
+    color: #133870;
+    font-family: 'Space Grotesk', sans-serif;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    overflow:auto;
+}
+
+.sidebar {
+    background: rgb(118, 210, 247);
+    color: #133870;
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
+    display: flex;
+}
+/*
+.table_sucrusales {
+    border: #1179d4;
+    border-style: double;
+    background-color: #acc3f3;
+    text-align: center;
+}*/
+
+/*Estilo a la tabla */
+.table_sucrusales th {background-color: #133870; color: #dae0ec; }
+.table_sucrusales tr:nth-child(odd) {background-color: rgb(208, 211, 240);}
+.table_sucrusales tr:nth-child(even) {background-color: rgb(237, 241, 255);}
+
+
+.div_sucursales {
+    padding: 20px;
+   margin-left: 30%;
+}
+
+
+.encabezado {
+    grid-area: encabezado;
+}
+
+.principal {
+    grid-area: principal;
+}
+
+.Tgold {
+    grid-area: Tgold;
+}
+
+.Tplatenium {
+    grid-area: Tplatenium;
+}
+
+.Tblack {
+    grid-area: Tblack;
+}
+
+.pie {
+    grid-area: pie;
+}
+
+.widget-1 {
+    grid-area: widget-1;
+}
+
+.widget-2 {
+    grid-area: widget-2;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.portada {
+    grid-area: portada;
+}
+
+.item1 {
+    grid-area: item1;
+}
+
+.body_formulario {
+    grid-area:formulario;
+}
+
+.item3 {
+    grid-area: item3;
+}
+
+.logosbco{
+    grid-area: logobco;
+}
+
+.menuopc{
+    text-align: center;
+    grid-area: menuop;
+}
+
+.logos{
+    grid-area: logos;
+}
+
+.AdmWid2{
+    grid-area: admwid2;
+}
+
+.AdmWid1{
+    grid-area: admwid1;
+}
+
+.lista{
+    grid-area: lista;
+}
+
+.div_sucursales{
+    grid-area: div_sucursales;
+}
+.sucursal_wid1{
+    grid-area: sucursal_wid1;
+}
+.sucursal_wid2{
+    grid-area: sucursal_wid2;
+}
+
+/*Tamaño Notebook Nuestros Producto */
+.contenedorProducto {
+    width: 90%;
+    margin: 20px auto;
+    gap: 20px;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+                        "principal principal principal"
+                         "Tgold Tplatenium Tblack";
+}
+
+/*Tamaño Notebook Hacete Cliente */
+.contenedorCliente {
+    display: grid;
+    grid-template-areas:
+                        "item1      item3 "
+                        "formulario  item3";
+    margin: 10px;
+    gap: 10px;
+}
+
+/*Tamaño Notebook Tienda */
+.ContenedorTienda{
+    display: grid;
+    grid-template-areas:
+                            "logobco menuop logos"
+                            "logobco menuop logos";
+}
+
+
+/*Tamaño Notebook Tienda */
+.ContenedorSucursales{
+    display: grid;
+    grid-template-areas:
+                            "sucursal_wid1 div_sucursales sucursal_wid2"
+                            "sucursal_wid1 div_sucursales sucursal_wid2";
+}
+
+/*Tamaño Notebook Tienda */
+.ContenedorAdministrador{
+    display: grid;
+    grid-template-areas:
+                            "admwid1 lista admwid2"
+                            "admwid1 lista admwid2";
+}
+
+
+/*Tamaño Notebook Inicio */
+.contenedorInicio {
+    margin: 5px auto;
+    display: grid;
+    gap: 5px;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+
+    grid-template-areas:
+        "portada portada sidebar"
+        "widget-1 widget-2 sidebar"
+    ;
+}
+
+
+/*Tamaño Tablet Nuestros Productos*/
+@media screen and (max-width: 768px) {
+    .contenedorProducto {
+        grid-template-areas: "principal principal principal"
+                             "Tgold Tplatenium Tplatenium"
+                             "Tblack Tblack Tblack"
+        ;
+    }
+}
+
+/*Tamaño celular Nuestros Porductos */
+@media screen and (max-width: 450px) {
+    .contenedorProducto {
+        grid-template-areas: "principal principal principal"
+                             "Tgold Tgold Tgold"
+                             "Tplatenium Tplatenium Tplatenium"
+                             "Tblack Tblack Tblack"
+        ;
+    }
+}
+
+/*Tamaño Tablet Pagina Inicio */
+@media screen and (max-width: 768px) {
+    .contenedorInicio {
+        grid-template-areas:
+            "portada portada portada"
+            "widget-1 widget-1 widget-2 "
+            "sidebar sidebar sidebar"
+        ;
+    }
+}
+
+/*Tamaño celular Pagina Inicio */
+@media screen and (max-width: 450px) {
+    .contenedorInicio {
+        grid-template-areas:
+            "portada portada portada"
+            "widget-1 widget-1 widget-1"
+            "widget-2 widget-2 widget-2"
+            "sidebar sidebar sidebar"
+        ;
+    }
+}
+
+
+/*Tamaño Tablet Hacete Cliente */
+@media screen and (max-width: 768px) {
+    .contenedorCliente {
+        grid-template-areas: "item1 item1 item1"
+                             "formulario formulario item3"
+        ;
+    }
+}
+
+/*Tamaño Celular Hacete Cliente */
+/*Nose porque no me deja verlo bien , no se me pone en las 3 filas el item 1*/
+@media screen and (max-width: 450px) {
+    .contenedorCliente {
+        grid-template-areas: "item1 item1 item1"
+                             "formulario formulario formulario"
+                             "formulario formulario formulario"
+        ;
+    }
+    .item3{
+        display: none;
+    }
+}
+
+
+.formulario_validacion {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.formulario__label {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.formulario__grupo-input {
+	position: relative;
+}
+
+.formulario__input {
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.formulario__input:focus {
+	border: 3px solid #0e5fbb;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__checkbox {
+	margin-right: 10px;
+    color: grey;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-ingresar {
+	grid-column: span 2;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background:#7929bb ;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__grupo-btn-ingresar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {
+	height: 20px;
+	line-height: 20px;;
+	background: #dbdfec;
+	color:black ;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.boton_enviar {
+	height: 45px;
+	line-height: 45px;
+    width: 30%;
+	background: #4b65bd;
+	color:white ;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.boton_enviar:hover {
+	box-shadow: 3px 0px 30px rgb(56, 194, 248);
+}
+
+
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #7929bb;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #7929bb;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #7929bb;
+}
+
+.body_formulario {
+	width: 90%; 
+	/*padding: 40px;*/
+    border-radius: 15px;
+    background-color: rgb(215, 206, 206);
+    padding: 15px;
+
+}
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 800px) {
+	.formulario_validacion {
+		grid-template-columns: 1fr;
+	}
+
+	.formulario__grupo-terminos, 
+	.formulario__mensaje,
+	.formulario__grupo-btn-ingresar {
+		grid-column: 1;
+	}
+
+	
+}

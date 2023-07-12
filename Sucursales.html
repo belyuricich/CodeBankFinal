@@ -1,0 +1,107 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nuestras Sucursales</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="shortcut icon" href="Imagenes/Code Digital Bank.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9da9f1f7b0.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/estilomenu.css">
+</head>
+<body>
+    <header>
+		<div class="encabezado">
+			<a href="#" class="bt-menu"><span class="icon-list2"></span>Menú</a>
+		</div>
+		<nav>
+            <h1>Code Digital Bank</h1>
+			<ul>
+				<li  class="boton"><a href="Index.html"><span ></span>Inicio</a></li>
+				<li  class="boton" ><a href="Quienessomos.html"><span></span>¿Quienes somos?</a></li>
+				<li  class="boton" ><a href="Nuestrosproductos.html"><span></span>Nuestros Productos</a></li>
+				<li  class="boton" ><a href="Hacetecliente.html"><span ></span>Hacete Cliente</a></li>
+                <li  class="boton" ><a href="Sucursales.html"><span ></span>Sucursales</a></li>
+                <li  class="boton" ><a href="IndexCrud.html"><span ></span>Tienda</a></li>
+                <li  class="boton2" ><a href="Administrador.html"><span ></span>  Administrador</a></li>
+			</ul>
+		</nav>
+	</header>
+
+    <div class="ContenedorSucursales">
+
+        <div class="sucursal_wid1">
+           
+        </div>
+
+    <div class="div_sucursales">
+          <table class="table_sucrusales">
+              <thead>
+                  <tr>
+                      <th>PAIS</th>
+                      <th>CIUDAD</th>
+                      <th>DOMICILIO</th>
+                      <th>TELEFONO</th>
+                  </tr>
+              </thead>
+              <tbody id="contenido">
+              </tbody> 
+          </table> 
+  
+
+        </div>
+
+
+        <div class="sucursal_wid2">
+            <img src="Imagenes/sucursales.jpg" alt="sucursales foto " width=400px>
+        </div>
+
+  <script>
+
+        var contenido = document.querySelector('#contenido')
+        fetch('https://randomuser.me/api/?results=15')  // Realizar solicitud HTTP a la API de direcciones
+        .then(response => response.json())
+                .then(response => {
+                    console.log(response)
+                for (let i = 0; i<16; i++){
+                   contenido.innerHTML+= 
+                   `<tr> 
+                        <td>${response.results[i].location.country}</td>
+                        <td>${response.results[i].location.city}</td>
+                        <td>${response.results[i].location.street.name} ${response.results[i].location.street.number} </td>
+                        <td>${response.results[i].phone}</td>
+                    </tr>`
+
+                }
+
+                })
+                .catch(error => console.log("Ocurrió un error", error)) // si hay un error será atrapado por catch
+            
+
+    </script>
+
+</div>
+    <footer class="pie">
+
+        <a class="iconos" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a class="iconos" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a class="iconos" href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a class="iconos" href="https://ar.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a class="iconos" href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+       
+        <p style="text-align: center; "><a  href="https://www.bcra.gob.ar/BCRAyVos/Usuarios_Financieros.asp" target="_blank"rel="noreferrer noopener"> <img src="Imagenes/Usuarios_financieros.jpg" alt="Usuarios_Financieros" width=300> </a>
+       
+       
+        <p style="text-align: center; ">© 2023 Code Digital Bank S.A. Todos los derechos reservados. <strong><i>Code Digital Bank</i></strong> es una marca registrada</p>
+       
+   </footer>
+   
+   </body>
+   </html>

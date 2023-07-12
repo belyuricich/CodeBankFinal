@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altas</title>
+    <link rel="shortcut icon" href="Imagenes/Code Digital Bank.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9da9f1f7b0.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilomenu.css">
+    <link rel="stylesheet" href="estilos.css">
+
+
+</head>
+
+<body>
+    <header>
+        
+		<div class="encabezado">
+			<a href="#" class="bt-menu"><span class="icon-list2"></span>Menú</a>
+		</div>
+		<nav>
+            <h1>Code Digital Bank</h1>
+			<ul>
+				<li  class="boton"><a href="Index.html"><span ></span>Inicio</a></li>
+				<li  class="boton" ><a href="Quienessomos.html"><span></span>¿Quienes somos?</a></li>
+				<li  class="boton" ><a href="Nuestrosproductos.html"><span></span>Nuestros Productos</a></li>
+				<li  class="boton" ><a href="Hacetecliente.html"><span ></span>Hacete Cliente</a></li>
+                <li  class="boton" ><a href="Sucursales.html"><span ></span>Sucursales</a></li>
+                <li  class="boton" ><a href="IndexCrud.html"><span ></span>Tienda</a></li>
+                
+			</ul>
+            </div>
+		</nav>
+	</header>
+   <H1>AGREAGAR PRODUCTO AL CATALOGO</H1>
+
+    <form id="formulario">
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" required><br>
+
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" name="descripcion" required><br>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" required><br>
+
+        <label for="precio">Precio:</label>
+        <input type="number" step="0.01" id="precio" name="precio" required><br>
+
+        <button type="submit">Agregar Producto</button>
+        <br> <br>
+        <a href="Administrador.html">ADMINISTRADOR</a>
+    </form>
+
+    <script>
+        const URL = "https://hernan4545.pythonanywhere.com/"
+        // Capturamos el evento de envío del formulario
+            document.getElementById('formulario').addEventListener('submit', function (event) {
+            event.preventDefault() // Evitamos que se recargue la página
+
+            // Obtenemos los valores del formulario
+            var codigo = document.getElementById('codigo').value
+            var descripcion = document.getElementById('descripcion').value
+            var cantidad = document.getElementById('cantidad').value
+            var precio = document.getElementById('precio').value
+
+            // Creamos un objeto con los datos del producto
+            var producto = {
+                codigo: codigo,
+                descripcion: descripcion,
+                cantidad: cantidad,
+                precio: precio
+            }
+            console.log(producto)
+            // Realizamos la solicitud POST al servidor
+            fetch(URL + 'productos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(producto)
+            })
+                .then(function (response) {
+                    if (response.ok) {
+                        return response.json() // Parseamos la respuesta JSON
+                    } else {
+                        throw new Error('Error al agregar el producto.')
+                    }
+                })
+                .then(function (data) {
+                    alert('Producto agregado correctamente.')
+                    document.getElementById('codigo').value = ""
+                    document.getElementById('descripcion').value = ""
+                    document.getElementById('cantidad').value = ""
+                    document.getElementById('precio').value = ""
+                })
+                .catch(function (error) {
+                    console.log('Error:', error)
+                    alert('Error al agregar el producto.')
+                })
+        })
+    </script>
+</body>
+
+
+
+</html>
